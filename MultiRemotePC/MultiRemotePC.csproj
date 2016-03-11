@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAB60F01-0D28-48C9-9531-7A71AADBFC96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiRemotePC</RootNamespace>
+    <AssemblyName>MultiRemotePC</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SNEED.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin, Version=12.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="ESBasic, Version=2.0.0.0, Culture=neutral, PublicKeyToken=ba1538489f75683e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\ESBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="ESFramework, Version=4.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\ESFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="OMCS, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\OMCS.dll</HintPath>
+    </Reference>
+    <Reference Include="PaintFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ba1538489f75683e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\PaintFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\ExcelReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExcelReg.Designer.cs">
+      <DependentUpon>ExcelReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCatelogNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCatelogNameForm.Designer.cs">
+      <DependentUpon>EditCatelogNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserListPerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserListPerManager.Designer.cs">
+      <DependentUpon>UserListPerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalResourceManager.cs" />
+    <Compile Include="GlobalUserCache.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormPartial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\UpdateUserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateUserInfoForm.Designer.cs">
+      <DependentUpon>UpdateUserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoteControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoteControl.Designer.cs">
+      <DependentUpon>RemoteControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\RemotePC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\RemotePC.Designer.cs">
+      <DependentUpon>RemotePC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\ExcelReg.resx">
+      <DependentUpon>ExcelReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCatelogNameForm.resx">
+      <DependentUpon>EditCatelogNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoteControl.resx">
+      <DependentUpon>RemoteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateUserInfoForm.resx">
+      <DependentUpon>UpdateUserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserListPerManager.resx">
+      <DependentUpon>UserListPerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControl\RemotePC.resx">
+      <DependentUpon>RemotePC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GG2014.Core\GG2014.Core.csproj">
+      <Project>{631e0627-09f3-4eed-8f37-a71d51b6c39e}</Project>
+      <Name>GG2014.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JustLib\JustLib.csproj">
+      <Project>{d39e8188-1274-459d-93b4-453a6f30cadf}</Project>
+      <Name>JustLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-4-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hdd-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SNEED.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-window-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreen-10-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-filled-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2-filled-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3-filled-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4-filled-128.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

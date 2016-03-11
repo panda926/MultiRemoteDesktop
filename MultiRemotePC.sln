@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiRemotePC", "MultiRemotePC\MultiRemotePC.csproj", "{EAB60F01-0D28-48C9-9531-7A71AADBFC96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GG2014.Core", "GG2014.Core\GG2014.Core.csproj", "{631E0627-09F3-4EED-8F37-A71D51B6C39E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustLib", "JustLib\JustLib.csproj", "{D39E8188-1274-459D-93B4-453A6F30CADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{7C51E7EA-F2F8-444C-846E-AB2F89651029}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://greenrose926.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Client\\Client.csproj
+		SccProjectName1 = Client
+		SccLocalPath1 = Client
+		SccProjectUniqueName2 = GG2014.Core\\GG2014.Core.csproj
+		SccProjectName2 = GG2014.Core
+		SccLocalPath2 = GG2014.Core
+		SccProjectUniqueName3 = JustLib\\JustLib.csproj
+		SccProjectName3 = JustLib
+		SccLocalPath3 = JustLib
+		SccProjectUniqueName4 = MultiRemotePC\\MultiRemotePC.csproj
+		SccProjectName4 = MultiRemotePC
+		SccLocalPath4 = MultiRemotePC
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAB60F01-0D28-48C9-9531-7A71AADBFC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB60F01-0D28-48C9-9531-7A71AADBFC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB60F01-0D28-48C9-9531-7A71AADBFC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB60F01-0D28-48C9-9531-7A71AADBFC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631E0627-09F3-4EED-8F37-A71D51B6C39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631E0627-09F3-4EED-8F37-A71D51B6C39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631E0627-09F3-4EED-8F37-A71D51B6C39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631E0627-09F3-4EED-8F37-A71D51B6C39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39E8188-1274-459D-93B4-453A6F30CADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39E8188-1274-459D-93B4-453A6F30CADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39E8188-1274-459D-93B4-453A6F30CADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39E8188-1274-459D-93B4-453A6F30CADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C51E7EA-F2F8-444C-846E-AB2F89651029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C51E7EA-F2F8-444C-846E-AB2F89651029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C51E7EA-F2F8-444C-846E-AB2F89651029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C51E7EA-F2F8-444C-846E-AB2F89651029}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

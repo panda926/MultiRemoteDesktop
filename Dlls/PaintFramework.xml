@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaintFramework</name>
+    </assembly>
+    <members>
+        <member name="T:PaintFramework.ViewEditors.TriangleEditor">
+            <summary>
+            TriangleEditor 三角形编辑器。
+            zhuweisky 2010.03.30
+            </summary>
+        </member>
+        <member name="T:PaintFramework.ViewEditors.IViewEditor">
+            <summary>
+            IViewEditor 用于接收鼠标的拖拽事件，以编辑即将新加入的View对象的编辑器的基础接口。
+            zhuweisky 2010.03.21
+            </summary>
+        </member>
+        <member name="M:PaintFramework.ViewEditors.IViewEditor.OnPaint(System.Drawing.Graphics)">
+            <summary>
+            当控件Paint事件时，调用该方法绘制当前正在编辑的对象。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.PageEventBase">
+            <summary>
+            PageEventBase Page和Work公用的事件。 
+            注意，在视频会议系统中，可以使BaseView的各个与事件是Serialized，即使我们在服务端会保存当前work的完整实例，因为page仅仅被work引用，而且服务器上的work的事件预订者都是null。
+            </summary>
+        </member>
+        <member name="E:PaintFramework.Views.PageEventBase.PageCleared">
+            <summary>
+            PageCleared page上的所有view被移除。参数为pageID。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.IPage">
+            <summary>
+            IPage 用于管理当前页的所有IView对象。
+            IPage的方法的所有位置参数都采用绝对的坐标（即采用与View对象所使用的坐标一致的表示）。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.IPage.NewView(PaintFramework.Views.IView)">
+            <summary>
+            如果view不再Page的Boundary之内，则view不会被添加到page中。
+            </summary>       
+        </member>
+        <member name="M:PaintFramework.Views.IPage.SubscribeAllViewsEvents">
+            <summary>
+            SubscribeAllViewsEvents 预定所有view实例的相关事件。该方法用于网络系统中，当客户端从服务器获取当前work实例后，
+            需要调用Work.SubscribeViewEventInPage来将View与page联系起来。 -- 因为view的相关事件是NonSerialized。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.IPage.Draw(System.Drawing.Graphics)">
+            <summary>
+            当控件Paint事件时，调用该方法绘制各视图对象。
+            </summary>        
+        </member>
+        <member name="M:PaintFramework.Views.IPage.GetBoundary">
+            <summary>
+            获取真实的边界。如果Boundary属性值不为null，则直接返回。否则，返回所有view的Bounds的并集。
+            </summary>        
+        </member>
+        <member name="M:PaintFramework.Views.Page.SubscribeAllViewsEvents">
+            <summary>
+            SubscribeAllViewsEvents 预定所有view实例的相关事件。该方法用于网络系统中，当客户端从服务器获取当前work实例后，
+            需要调用Work.SubscribeViewEventInPage来将View与page联系起来。 -- 因为view的相关事件是NonSerialized。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Views.Page.ViewIDCreator">
+            <summary>
+            ViewIDCreator 当多人协作时，同步ViewID的生成。另外可以考虑使用ESBasic.ObjectManagement.Basic.BeforehandCreator来提前生成许多ViewID。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Views.Page.Boundary">
+            <summary>
+            Page的边界。值为null时，表示没有边界。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Views.Page.NewViewSelected">
+            <summary>
+            是否选中新创建的view。默认值false。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.BaseView">
+            <summary>
+            BaseView 所有视图元件的基类。
+            注意，在视频会议系统中，必须保证BaseView的各个与事件是NonSerialized，从而在New View时，不会序列化这些事件的预订者。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.IView">
+            <summary>
+            IView 所有可视化主体的基础接口。
+            zhuweisky 2006.09.19
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.IView.Contains(System.Drawing.Point)">
+            <summary>
+            Contains 判断目标点是否落在IViewObject的范围内
+            </summary>      
+        </member>
+        <member name="M:PaintFramework.Views.IView.OnClick(PaintFramework.Views.IPanel,PaintFramework.Views.CoordinateTransformatter)">
+            <summary>
+            如果View在被Click的时候，有特别的行为，则可以实现该方法。
+            </summary>        
+        </member>
+        <member name="P:PaintFramework.Views.IView.CheckBoundary">
+            <summary>
+            是否检测边界。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Views.IView.CanvasBoundary">
+            <summary>
+            画布的边界。值为null时，表示没有边界。如果边界存在，则View只能在边界内移动。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Views.BaseView.CanvasBoundary">
+            <summary>
+            画布的边界。值为null时，表示没有边界。如果边界存在，则View只能在边界内移动。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Views.BaseView.CheckBoundary">
+            <summary>
+            是否检测边界。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.ViewEditor">
+            <summary>
+            集合了所有Paint功能的用户控件。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.ViewEditor.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ViewEditor.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.ViewEditor.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewEditor.KeyMoveDistance">
+            <summary>
+            KeyMoveDistance 当ArrowKeyEnabled为true时，每按一下方向键时移动选中的ViewObject的距离
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewEditor.ArrowKeyEnabled">
+            <summary>
+            ArrowKeyEnabled 是否启用方向键来移动选中的ViewObject
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewEditor.KeepSameViewType">
+            <summary>
+            当完成一个view绘制后，是否继续绘制同样的view，还是将ViewType还原成ViewType.Operation。默认值true。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewEditor.NewViewSelected">
+            <summary>
+            是否选中新创建的view。默认值false。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewEditor.ToolBarVisiable">
+            <summary>
+            工具栏是否可见。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewEditor.SpringEventWhenScrollWorkSpace">
+            <summary>
+            当滚动工作区的滚动条时，是否触发WorkSpaceScrollPositionChanged事件。默认值：false。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.ViewPropertyForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ViewPropertyForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PaintFramework.Application.ViewPropertyForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.HandWritingBoard.GetHandWriting">
+            <summary>
+            获取涂鸦的结果（位图）。
+            </summary>       
+        </member>
+        <member name="M:PaintFramework.Application.HandWritingBoard.Clear">
+            <summary>
+            清空画板。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.HandWritingBoard.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.HandWritingBoard.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.HandWritingBoard.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.HandWritingBoard.PenColor">
+            <summary>
+            设置画笔颜色。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.HandWritingBoard.PenWidth">
+            <summary>
+            设置画笔粗细。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.RectHotPointPosition">
+            <summary>
+            RectHotPointPosition 一个矩形上8个热点位置。
+            zhuweisky 2010.03.22
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.ElbowView">
+            <summary>
+            ElbowView 表示肘形的View。
+            zhuweisky 2010.03.30
+            </summary>
+        </member>
+        <!-- 对于成员“T:PaintFramework.ViewEditors.RectangleEditor”忽略有格式错误的 XML 注释 -->
+        <member name="T:PaintFramework.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.RectHotPointCache">
+            <summary>
+            RectHotPointCache 用于缓存一个矩形上的8个热点对象。
+            zhuweisky 2010.03.22
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.RectHotPointCache.GetCursor(PaintFramework.Views.RectHotPointPosition)">
+            <summary>
+            GetCursor 根据热点所处于Rectangle的位置，获取表示修改Rectangle尺寸的正确光标。
+            </summary>       
+        </member>
+        <member name="T:PaintFramework.Views.BaseRectangleView">
+            <summary>
+            BaseRectangleView 所有拥有矩形边框的View都可从此基类继承。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.ViewEditors.VirtualEditor">
+            <summary>
+            VirtualEditor 对应于ViewType.None，通常用于在执行其他Editor时，按下ESC取消后续操作时，这时将用VirtualEditor来模拟完成后续的鼠标事件。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.ViewEditors.OperationMockEditor">
+            <summary>
+            虚拟的View编辑器，主要用于单选或框选View对象、或移动、改变它们的大小。
+            zhuweisky 2010.03.21
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.IWork">
+            <summary>
+            IWork 能够进行同步的基础接口，用于实现白板协作。************** 特别要注意，以防引起连锁反应 **********************
+            zhuweisky 2010.03.29
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.IWorkInputs">
+            <summary>
+            接收来自网络的消息，变成白板的输入。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.IWork.SubscribeViewEventInPage">
+            <summary>
+            SubscribeViewEventInPage 让每个Page预定其内部所有view实例的相关事件。该方法用于网络系统中，当客户端从服务器获取当前work实例后，
+            需要调用Work.SubscribeViewEventInPage来将View与page联系起来。 -- 因为view的相关事件是NonSerialized。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.IWork.SubscribePageEvent">
+            <summary>
+            SubscribePageEvent 当反序列化获得work实例后(从网络或本地文件)，需要调用此方法预定各个Page的相关事件，因为Page的相关事件是NonSerialized的。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.IWork.Clear">
+            <summary>
+            Clear 删除所有page。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.IWork.WorkInputsCallback">
+            <summary>
+            当Work接收到来自网络的白板消息，首先会改变当前Work的内容，然后，再回调WorkInputsCallback通知外部该变化。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.Work.SubscribeViewEventInPage">
+            <summary>
+            SubscribeViewEventInPage 让每个Page预定其内部所有view实例的相关事件。该方法用于网络系统中，当客户端从服务器获取当前work实例后，
+            需要调用Work.SubscribeViewEventInPage来将View与page联系起来。 -- 因为view的相关事件是NonSerialized。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.Work.SubscribePageEvent">
+            <summary>
+            SubscribePageEvent 当反序列化获得work实例后(从网络或本地文件)，需要调用此方法预定各个Page的相关事件，因为Page的相关事件是NonSerialized的。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.Work.Landscape">
+            <summary>
+            Landscape 如果页面应横向打印，则为 true；反之，则为 false。默认值为true。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.Work.ViewIDCreator">
+            <summary>
+            ViewIDCreator 当多人协作时，同步ViewID的生成。另外可以考虑使用ESBasic.ObjectManagement.Basic.BeforehandCreator来提前生成许多ViewID。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.Work.Boundary">
+            <summary>
+            Page的边界。值为null时，表示没有边界。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.Work.WorkInputsCallback">
+            <summary>
+            当Work接收到来自网络的白板消息，首先会改变当前Work的内容，然后，再回调WorkInputsCallback通知外部该变化。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Widget.TextEditForm">
+            <summary>
+            TextEditForm 用于编辑TextView的Content信息。
+            zhuweisky 2010.03.22
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Widget.TextEditForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Widget.TextEditForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PaintFramework.Widget.TextEditForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.WorkSpaceScroll">
+            <summary>
+            白板工作区的滚动条装置。
+            </summary>
+        </member>
+        <member name="E:PaintFramework.Application.WorkSpaceScroll.WorkSpaceScrollPositionChanged">
+            <summary>
+            当工作区的滚动条位置发生变化时，触发该事件。参数为AutoScrollPosition的X和Y
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WorkSpaceScroll.SpringEventWhenScrollWorkSpace">
+            <summary>
+            当滚动工作区的滚动条时，是否触发WorkSpaceScrollPositionChanged事件。默认值：false。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.WhiteBoard">
+            <summary>
+            包含了各种工具栏（如缩放、笔、填充、缩略图等）的白板控件。内部使用了ViewEditor控件。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.WhiteBoard.SetCurrentWork(PaintFramework.Application.Work)">
+            <summary>
+            SetCurrentWork 重新设定当前work实例。
+            当从本地加载.pf或网络加载work实例时调用。
+            </summary>        
+        </member>
+        <member name="M:PaintFramework.Application.WhiteBoard.OpenDocument(System.String)">
+            <summary>
+            OpenDocument 打开.pf,.doc,.docx,.ppt,.pptx文档。
+            由OpenDocumentMode属性决定是否先要将当前的work中的page清空。
+            针对要打开的文档中的每个page都在当前的work中新建一个page，并且逐个将每个view添加到新的page中。如此，可以防止viewID重复。        
+            </summary>      
+        </member>
+        <member name="F:PaintFramework.Application.WhiteBoard.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.WhiteBoard.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.WhiteBoard.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WhiteBoard.ReadOnly">
+            <summary>
+            是否只能浏览内容而不能修改内容（除不能修改View对象外，还包括不能新增删除页）
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WhiteBoard.MainToolbarVisiable">
+            <summary>
+            主工具栏（包括打印、缩放等功能）是否可见。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WhiteBoard.AllowChoosePage">
+            <summary>
+            是否允许主动跳转到其它的页面。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WhiteBoard.OpenDocumentMode">
+            <summary>
+            打开新文档时，是先删除所有现有的page，还是直接在现有的page后面追加新的page。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WhiteBoard.ThumbnailEnabled">
+            <summary>
+            缩略图是否启用。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.OpenDocumentMode.ClearOldPages">
+            <summary>
+            ClearOldPages 清除所有老的page。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.OpenDocumentMode.Append">
+            <summary>
+            Append 追加到老的page后面。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.ViewCanvas">
+            <summary>
+            ViewPanel 用于绘制View的画布，并设置双缓冲以解决绘制时的闪烁问题。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.ViewCanvas.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ViewCanvas.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.ViewCanvas.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.TextFont">
+            <summary>
+            文本的颜色与字体
+            </summary>
+        </member>
+        <!-- 对于成员“T:PaintFramework.ViewEditors.TextEditor”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“T:PaintFramework.ViewEditors.EllipseEditor”忽略有格式错误的 XML 注释 -->
+        <member name="T:PaintFramework.Views.RectResizeAction">
+            <summary>
+            RectResizeAction 表示即将执行某个BaseRectangleView对象的Resize动作的相关信息。
+            zhuweisky 2010.03.22
+            </summary>   
+        </member>
+        <member name="T:PaintFramework.Views.IResizeAction">
+            <summary>
+            用于封装一个Resize动作。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.CurveView">
+            <summary>
+            CurveView 自由曲线。
+            zhuweisky 2010.03.23
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Application.WorkSpaceDevice">
+            <summary>
+            WorkSpaceDevice 白板工作者设备。
+            1. 激光笔，视频会议中主持人使用激光笔来指示位置。跟work没有关系，被ViewEditor控件使用。
+            (1)显示并捕捉当前用户的激光笔位置（红色），并触发PositionChanged事件。
+            (2)显示远程用户的激光笔的位置（蓝色）。
+            2. 滚动条
+            (1)当滚动时，触发WorkSpaceScrollPositionChanged事件。
+            (2)当接收到远程滚动位置变化时，同步本地滚动条。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.WorkSpaceDevice.ClearEvent">
+            <summary>
+            ClearEvent 清除PositionChanged和VisibleChanged事件的处理器。
+            </summary>
+        </member>
+        <member name="E:PaintFramework.Application.WorkSpaceDevice.WorkSpaceScrollPositionChanged">
+            <summary>
+            当工作区的滚动条位置发生变化时，触发该事件。参数为AutoScrollPosition
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WorkSpaceDevice.SpringEventWhenScrollWorkSpace">
+            <summary>
+            当滚动工作区的滚动条时，是否触发WorkSpaceScrollPositionChanged事件。默认值：false。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WorkSpaceDevice.LaserPointerVisible">
+            <summary>
+            是否绘制激光笔。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.WorkSpaceDevice.RemoteLaserPointerPosition">
+            <summary>
+            RemoteLaserPointerPosition 远程主持人当前的激光笔的位置。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.ViewEditors.ViewEditorContainer">
+            <summary>
+            ViewEditorContainer 用于管理所有的IViewEditor，并将其与Panel的事件关联起来。
+            注意：拖放产生的事件顺序：MouseDown、MouseMove、MouseUp
+            </summary>
+        </member>
+        <member name="M:PaintFramework.ViewEditors.ViewEditorContainer.panel_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            当控件Paint事件时，调用该方法绘制当前正在编辑的对象。
+            </summary>        
+        </member>
+        <member name="M:PaintFramework.ViewEditors.ViewEditorContainer.CheckCursorPoisition">
+            <summary>
+            CheckCursorPoisition 查看鼠标是否落在View或热点上
+            </summary>
+        </member>
+        <member name="P:PaintFramework.ViewEditors.ViewEditorContainer.KeepSameViewType">
+            <summary>
+            当完成一个view绘制后，是否继续绘制同样的view，还是将ViewType还原成ViewType.Operation。默认值true。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.ViewEditors.ViewEditorContainer.ActiveRefresh">
+            <summary>
+            是否启用主动刷新。默认值为true。（比如当移动某个view时，是否主动调用Panel的Refresh事件以绘制移动效果！）
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.CoordinateTransformatter">
+            <summary>
+            CoordinateTransformatter 用于进行缩放、滚动条的坐标变换。
+            将在ViewEditor的viewPanel1_Paint方法中设定Graphics的绘制比例和变形偏移。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.CoordinateTransformatter.Translate(System.Drawing.Point)">
+            <summary>
+            Translate 将鼠标位置转换（Scroll和Scale）还原为实际位置。
+            </summary>      
+        </member>
+        <member name="M:PaintFramework.Views.CoordinateTransformatter.Translate(System.Drawing.Rectangle)">
+            <summary>
+            Translate 将鼠标绘制的矩形转换（Scroll和Scale）还原为实际的矩形。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.CoordinateTransformatter.AntiTranslate(System.Drawing.Point)">
+            <summary>
+            AntiTranslate 将实际位置变换（Scroll和Scale）为鼠标位置。
+            </summary>  
+        </member>
+        <member name="M:PaintFramework.Views.CoordinateTransformatter.AntiTranslate(System.Drawing.Rectangle)">
+            <summary>
+            AntiTranslate 将实际矩形变换（Scroll和Scale）为鼠标矩形。
+            </summary>    
+        </member>
+        <member name="T:PaintFramework.Application.RegionSelecter">
+            <summary>
+            用于可视化选择控件表面的一块正方形区域。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.RegionSelecter.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.RegionSelecter.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.RegionSelecter.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="E:PaintFramework.Application.RegionSelecter.RegionSelected">
+            <summary>
+            当被选中的区域发生变化时，触发此事件。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.RegionSelecter.SelectedRegion">
+            <summary>
+            选中的区域。
+            </summary>
+        </member>
+        <!-- 对于成员“T:PaintFramework.ViewEditors.LineEditor”忽略有格式错误的 XML 注释 -->
+        <member name="T:PaintFramework.Views.TriangleView">
+            <summary>
+            TriangleView 表示三角形的View。
+            zhuweisky 2010.03.30
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Views.LineView.Contains(System.Drawing.Point)">
+            <summary>
+            目标点是否在线段上 (y2-y1)(x-x1) = (y-y1)(x2-x1)
+            </summary>		
+        </member>
+        <member name="T:PaintFramework.ViewEditors.CurveEditor">
+            <summary>
+            CurveEditor 自由曲线编辑器。
+            zhuweisky 2010.03.23
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Application.ViewPanel.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ViewPanel.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.ViewPanel.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewPanel.KeepSameViewType">
+            <summary>
+            当完成一个view绘制后，是否继续绘制同样的view，还是将ViewType还原成ViewType.Operation。默认值true。
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewPanel.KeyMoveDistance">
+            <summary>
+            KeyMoveDistance 当ArrowKeyEnabled为true时，每按一下方向键时移动选中的ViewObject的距离
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewPanel.ArrowKeyEnabled">
+            <summary>
+            ArrowKeyEnabled 是否启用方向键来移动选中的ViewObject
+            </summary>
+        </member>
+        <member name="P:PaintFramework.Application.ViewPanel.SpringEventWhenScrollWorkSpace">
+            <summary>
+            当滚动工作区的滚动条时，是否触发WorkSpaceScrollPositionChanged事件。默认值：false。
+            </summary>
+        </member>
+        <member name="T:PaintFramework.Views.SinglePointResizeAction">
+            <summary>
+            SinglePointResizeAction 用于类似线段、三角形等通过移动单个定点来改变形状的动作。
+            zhuweisky 2010.03.30
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Views.ViewType.None">
+            <summary>
+            None 针对鼠标事件，不进行任何动作。通常用于ESC取消其它ViewEditor的当前动作时。
+            </summary>
+        </member>
+        <member name="F:PaintFramework.Views.ViewType.Operation">
+            <summary>
+            虚拟的View编辑器，主要用于单选或框选View对象、或移动、改变它们的大小。        
+            </summary>
+        </member>
+        <member name="T:PaintFramework.ViewEditors.SquareEditor">
+            <summary>
+            正方形编辑器。
+            </summary>
+        </member>
+        <!-- 对于成员“T:PaintFramework.ViewEditors.ElbowEditor”忽略有格式错误的 XML 注释 -->
+        <member name="F:PaintFramework.Application.ImagePartSelecter.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ImagePartSelecter.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:PaintFramework.Application.ImagePartSelecter.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ImagePartSelecter.GetResultImage">
+            <summary>
+            获取结果图片（原始图片的选择区域截图）。
+            </summary>
+        </member>
+        <member name="M:PaintFramework.Application.ImagePartSelecter.Initialize(System.Int32)">
+            <summary>
+            初始化。
+            </summary>
+            <param name="outputImgLen">最终要输出的正方形图片的边长。</param>
+        </member>
+        <member name="M:PaintFramework.Application.ImagePartSelecter.SetSourceImage(System.Drawing.Image)">
+            <summary>
+            指定要被选取的图片。
+            </summary>        
+        </member>
+        <member name="E:PaintFramework.Application.ImagePartSelecter.ImagePartSelected">
+            <summary>
+            当选择的区域发生改变时，会触发此事件。事件参数为原始图片的选择区域截图。
+            </summary>
+        </member>
+    </members>
+</doc>

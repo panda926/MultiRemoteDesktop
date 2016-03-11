@@ -1,0 +1,572 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JustLib</name>
+    </assembly>
+    <members>
+        <member name="F:JustLib.Controls.ImageForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.ImageForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:JustLib.Controls.ImageForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:JustLib.Controls.FourierTransformer">
+            <summary>
+            傅立叶变换。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.GraphicsPathHelper.CreatePath(System.Drawing.Rectangle,System.Int32,JustLib.Controls.RoundStyle,System.Boolean)">
+            <summary>
+            建立带有圆角样式的路径。
+            </summary>
+            <param name="rect">用来建立路径的矩形。</param>
+            <param name="_radius">圆角的大小。</param>
+            <param name="style">圆角的样式。</param>
+            <param name="correction">是否把矩形长宽减 1,以便画出边框。</param>
+            <returns>建立的路径。</returns>
+        </member>
+        <member name="F:JustLib.UnitViews.OrgView.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.UnitViews.OrgView.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.UnitViews.OrgView.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.DrawToolsControl.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.DrawToolsControl.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.Controls.DrawToolsControl.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:JustLib.UnitViews.UserListBox.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.UnitViews.UserListBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.UnitViews.UserListBox.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="E:JustLib.UnitViews.UserListBox.AddCatalogClicked">
+            <summary>
+            添加分组的菜单被点击。参数:组名称
+            </summary>
+        </member>
+        <member name="E:JustLib.UnitViews.UserListBox.ChangeCatalogNameClicked">
+            <summary>
+            修改组名的菜单被点击。参数:组名称
+            </summary>
+        </member>
+        <member name="E:JustLib.UnitViews.UserListBox.CatalogNameChanged">
+            <summary>
+            当修改分组名称时，触发此事件。参数：oldName - newName - isMerge
+            </summary>
+        </member>
+        <member name="E:JustLib.UnitViews.UserListBox.CatalogAdded">
+            <summary>
+            当增加一个分组时，触发此事件。参数：CatelogName
+            </summary>
+        </member>
+        <member name="E:JustLib.UnitViews.UserListBox.CatalogRemoved">
+            <summary>
+            当删除一个分组时，触发此事件。参数：CatelogName
+            </summary>
+        </member>
+        <member name="E:JustLib.UnitViews.UserListBox.FriendCatalogMoved">
+            <summary>
+            当将好友转移到另一组时，触发此事件。参数： FriendID - oldCatalog - newCatalogName
+            </summary>
+        </member>
+        <member name="P:JustLib.IUser.Department">
+            <summary>
+            如果为空字符串，则表示位于组织外。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.DecibelDisplayer.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.DecibelDisplayer.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.Controls.DecibelDisplayer.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:JustLib.UnitViews.GroupListBox.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.UnitViews.GroupListBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.UnitViews.GroupListBox.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.SpeakerPanel.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.SpeakerPanel.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.Controls.SpeakerPanel.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:JustLib.Controls.EmotionForm">
+            <summary>
+            表情选择窗体。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.EmotionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.EmotionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:JustLib.Controls.EmotionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="E:JustLib.Controls.EmotionForm.EmotionClicked">
+            <summary>
+            EmotionClicked 某个表情图片被点击。参数: 被点击图片的索引 - Image。
+            </summary>
+        </member>
+        <member name="T:JustLib.Controls.RoundStyle">
+            <summary>
+            建立圆角路径的样式。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.RoundStyle.None">
+            <summary>
+            四个角都不是圆角。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.RoundStyle.All">
+            <summary>
+            四个角都为圆角。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.RoundStyle.Left">
+            <summary>
+            左边两个角为圆角。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.RoundStyle.Right">
+            <summary>
+            右边两个角为圆角。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.RoundStyle.Top">
+            <summary>
+            上边两个角为圆角。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.RoundStyle.Bottom">
+            <summary>
+            下边两个角为圆角。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.ColorSelector.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.ColorSelector.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.Controls.ColorSelector.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:JustLib.Controls.ScreenCapturer.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.ScreenCapturer.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.Controls.ScreenCapturer.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:JustLib.Controls.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Accept">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Arrow">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Ellipse">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Exit">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Line">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Rectangular">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Redo">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Save">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.Properties.Resources.Text">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:JustLib.Controls.ChatBox">
+            <summary>
+            支持图片和动画的RichTextBox。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.ChatBox.InsertDefaultEmotion(System.UInt32,System.Int32)">
+            <summary>
+            在position位置处，插入系统内置表情。
+            </summary>      
+            <param name="position">插入的位置</param>
+            <param name="emotionID">表情图片在内置列表中的index</param>
+        </member>
+        <member name="M:JustLib.Controls.ChatBox.InsertImage(System.Drawing.Image,System.Int32)">
+            <summary>
+            在position位置处，插入图片。
+            </summary>   
+            <param name="image">要插入的图片</param>
+            <param name="position">插入的位置</param>       
+        </member>
+        <member name="M:JustLib.Controls.ChatBox.GetContent">
+            <summary>
+            获取Box中的所有内容。
+            </summary>        
+            <param name="containsForeignObject">内容中是否包含不是由IImagePathGetter管理的图片对象</param>
+            <returns>key为位置，val为图片的ID</returns>
+        </member>
+        <member name="M:JustLib.Controls.ChatBox.AppendRichText(System.String,System.Drawing.Font,System.Drawing.Color)">
+            <summary>
+            在现有内容后面追加富文本。
+            </summary>      
+        </member>
+        <member name="E:JustLib.Controls.ChatBox.FileOrFolderDragDrop">
+            <summary>
+            当文件（夹）拖放到控件内时，触发此事件。参数：文件路径的集合。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.ChatBox.ContextMenuMode">
+            <summary>
+            快捷菜单的模式。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.ChatBox.PopoutImageWhenDoubleClick">
+            <summary>
+            双击图片时，是否弹出图片。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.ChatBoxContent.Text">
+            <summary>
+            纯文本信息
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.ChatBoxContent.ForeignImageDictionary">
+            <summary>
+            非内置的表情图片。key - 在ChatBox中的位置。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.ChatBoxContent.EmotionDictionary">
+            <summary>
+            内置的表情图片。key - 在ChatBox中的位置 ，value - 表情图片在内置列表中的index。
+            </summary>
+        </member>
+        <member name="P:JustLib.Controls.ChatBoxContent.PicturePositions">
+            <summary>
+            所有图片的位置。从小到大排列。
+            </summary>
+        </member>
+        <member name="F:JustLib.UnitViews.RecentListBox.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.UnitViews.RecentListBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.UnitViews.RecentListBox.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:JustLib.Caches.BaseGlobalUserCache`2">
+            <summary>
+            管理所有本地联系人（好友、组友）、组的资料、状态。
+            （1）当前登录用户的资料不缓存，每次登录从服务器获取最新。
+            （2）当前登录用户修改个人资料时，服务器会将其Version增加1。如果仅仅是好友列表/所属组发生变化，则Version不会增加。
+            </summary>
+        </member>
+        <member name="M:JustLib.Caches.BaseGlobalUserCache`2.StartRefreshFriendInfo">
+            <summary>
+            当登录后窗体显示时，或断线重连成功时，调用此方法。
+            </summary>
+        </member>
+        <member name="M:JustLib.Caches.BaseGlobalUserCache`2.OnFriendAdded(`0)">
+            <summary>
+            被别人添加为好友。
+            </summary>        
+        </member>
+        <member name="M:JustLib.Caches.BaseGlobalUserCache`2.RemoveGroup(System.String)">
+            <summary>
+            当退出群时调用。
+            </summary>        
+        </member>
+        <member name="T:JustLib.Controls.JustHelper">
+            <summary>
+            JustLib.Controls提供的帮助类。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.JustHelper.FlashChatWindow(System.Windows.Forms.Form)">
+            <summary>
+            闪动窗口
+            </summary>
+            <param name="form">要闪动的窗口</param>
+        </member>
+        <member name="F:JustLib.Controls.MultiAudioChatContainer.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:JustLib.Controls.MultiAudioChatContainer.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:JustLib.Controls.MultiAudioChatContainer.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="E:JustLib.Controls.MultiAudioChatContainer.InviteFriendClick">
+            <summary>
+            当点击邀请好友的Button时，触发此事件。
+            </summary>
+        </member>
+        <member name="P:JustLib.Caches.UserLocalPersistence`2.FriendList">
+            <summary>
+            好友缓存。（包括组友）
+            </summary>
+        </member>
+        <member name="P:JustLib.Caches.UserLocalPersistence`2.RecentList">
+            <summary>
+            最近联系人
+            </summary>
+        </member>
+        <member name="P:JustLib.Records.ChatMessageRecord.AutoID">
+            <summary>
+            自增ID，编号。
+            </summary>
+        </member>
+        <member name="P:JustLib.Records.ChatMessageRecord.SpeakerID">
+            <summary>
+            发言人的ID。
+            </summary>
+        </member>
+        <member name="P:JustLib.Records.ChatMessageRecord.AudienceID">
+            <summary>
+            听众ID，可以为GroupID。
+            </summary>
+        </member>
+        <member name="P:JustLib.Records.ChatMessageRecord.OccureTime">
+            <summary>
+            聊天记录发生的时间。
+            </summary>
+        </member>
+        <member name="P:JustLib.Records.ChatMessageRecord.Content">
+            <summary>
+            聊天的内容。
+            </summary>
+        </member>
+        <member name="P:JustLib.Records.ChatMessageRecord.IsGroupChat">
+            <summary>
+            是否为群聊记录。
+            </summary>
+        </member>
+        <member name="M:JustLib.Records.IChatRecordPersister.InsertChatMessageRecord(JustLib.Records.ChatMessageRecord)">
+            <summary>
+            插入一条聊天记录（包括群聊天记录）。
+            </summary>  
+        </member>
+        <member name="M:JustLib.Records.IChatRecordPersister.GetChatRecordPage(JustLib.Records.ChatRecordTimeScope,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取一页与好友的聊天记录。
+            </summary>
+            <param name="timeScope">日期范围</param>
+            <param name="myID">自己的UserID</param>
+            <param name="friendID">好友的ID</param>
+            <param name="pageSize">页大小</param>
+            <param name="pageIndex">页索引</param>      
+            <returns>聊天记录页</returns>
+        </member>
+        <member name="M:JustLib.Records.IChatRecordPersister.GetGroupChatRecordPage(JustLib.Records.ChatRecordTimeScope,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取一页群聊天记录。
+            </summary>
+            <param name="timeScope">日期范围</param>
+            <param name="groupID">群ID</param>
+            <param name="pageSize">页大小</param>
+            <param name="pageIndex">页索引</param>     
+            <returns>聊天记录页</returns>
+        </member>
+        <member name="T:JustLib.Records.DefaultChatRecordPersister">
+            <summary>
+            聊天记录本地持久化器。
+            </summary>
+        </member>
+        <member name="M:JustLib.Records.DefaultChatRecordPersister.InsertChatMessageRecord(JustLib.Records.ChatMessageRecord)">
+            <summary>
+            插入一条聊天记录。
+            </summary>      
+        </member>
+        <member name="M:JustLib.Records.DefaultChatRecordPersister.GetGroupChatRecordPage(JustLib.Records.ChatRecordTimeScope,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取一页群聊天记录。
+            </summary>
+            <param name="groupID">群ID</param>
+            <param name="pageSize">页大小</param>
+            <param name="pageIndex">页索引</param>     
+            <returns>聊天记录页</returns>
+        </member>
+        <member name="M:JustLib.Records.DefaultChatRecordPersister.GetChatRecordPage(JustLib.Records.ChatRecordTimeScope,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取一页与好友的聊天记录。
+            </summary>
+            <param name="myID">自己的UserID</param>
+            <param name="friendID">好友的ID</param>
+            <param name="pageSize">页大小</param>
+            <param name="pageIndex">页索引</param>      
+            <returns>聊天记录页</returns>
+        </member>
+        <member name="T:JustLib.Records.SqliteChatRecordPersister">
+            <summary>
+            聊天记录本地持久化器（Sqlite数据库）。
+            </summary>
+        </member>
+    </members>
+</doc>
