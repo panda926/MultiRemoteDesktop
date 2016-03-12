@@ -86,6 +86,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="bin\Debug.rar" />
+    <None Include="bin\Debug\Client.exe.config" />
+    <None Include="bin\Debug\Client.vshost.exe.config" />
+    <None Include="bin\Debug\Client.vshost.exe.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,8 +111,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\AudioEngineCore.dll" />
+    <Content Include="bin\Debug\Client.exe" />
+    <Content Include="bin\Debug\Client.pdb" />
+    <Content Include="bin\Debug\Client.vshost.exe" />
+    <Content Include="bin\Debug\CSkin.dll" />
+    <Content Include="bin\Debug\DataRabbit.dll" />
+    <Content Include="bin\Debug\dxbase.dll" />
+    <Content Include="bin\Debug\ESBasic.dll" />
+    <Content Include="bin\Debug\ESBasic.xml" />
+    <Content Include="bin\Debug\ESFramework.dll" />
+    <Content Include="bin\Debug\ESFramework.xml" />
+    <Content Include="bin\Debug\ESFrameworkLog.txt" />
+    <Content Include="bin\Debug\GG2014.Core.dll" />
+    <Content Include="bin\Debug\GG2014.Core.pdb" />
+    <Content Include="bin\Debug\JustLib.dll" />
+    <Content Include="bin\Debug\JustLib.pdb" />
+    <Content Include="bin\Debug\JustLib.xml" />
+    <Content Include="bin\Debug\OMCS.dll" />
+    <Content Include="bin\Debug\OMCS.xml" />
+    <Content Include="bin\Debug\PaintFramework.dll" />
+    <Content Include="bin\Debug\PaintFramework.xml" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="bin\Debug\VideoEngineCore.dll" />
     <Content Include="needplus_logo_.ico" />
     <Content Include="SNEED.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

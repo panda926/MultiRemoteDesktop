@@ -1,0 +1,52 @@
+
+2015-07-31 오후 5:32:10 : 高 －－ 개체 참조가 개체의 인스턴스로 설정되지 않았습니다. [:]    위치: fS1Vlv3q3n5WaQlXtY.E68gndVsxs1XnSLYiR.ProcessMessage(IMessage )
+   위치: ESFramework.Passive.ContainerStylePassiveProcesser.7NHs23ByY(IMessage ) 。错误类型:System.NullReferenceException。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:203,UserID:10001,DestUserID:10000
+
+
+2015-07-31 오후 5:32:10 : 高 －－ 개체 참조가 개체의 인스턴스로 설정되지 않았습니다. [:]    위치: fS1Vlv3q3n5WaQlXtY.E68gndVsxs1XnSLYiR.ProcessMessage(IMessage )
+   위치: ESFramework.Passive.ContainerStylePassiveProcesser.7NHs23ByY(IMessage ) 。错误类型:System.NullReferenceException。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:203,UserID:10001,DestUserID:10000
+
+
+2015-07-31 오후 5:32:11 : 高 －－ 개체 참조가 개체의 인스턴스로 설정되지 않았습니다. [:]    위치: fS1Vlv3q3n5WaQlXtY.E68gndVsxs1XnSLYiR.ProcessMessage(IMessage )
+   위치: ESFramework.Passive.ContainerStylePassiveProcesser.7NHs23ByY(IMessage ) 。错误类型:System.NullReferenceException。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:203,UserID:10001,DestUserID:10000
+
+
+8/12/2015 12:09:19 PM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10000
+
+
+8/12/2015 12:11:26 PM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10002
+
+
+8/12/2015 12:12:22 PM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10002
+
+
+8/14/2015 10:00:33 AM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10001
+
+
+8/14/2015 10:01:12 AM : 高 －－ The Information Handler On Type [45] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10001
+
+
+8/14/2015 10:11:42 AM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10001
+
+
+8/19/2015 8:17:59 PM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10003
+
+
+8/19/2015 8:18:29 PM : 高 －－ The Information Handler On Type [37] is not found ! [:]    at ESPlus.Application.CustomizeInfo.ComplexCustomizeHandler.HandleInformation(String sourceUserID, Int32 informationType, Byte[] info)
+   at Class85.ProcessMessage(Interface12 interface12_0)
+   at Class4.method_10(Interface12 interface12_0) 。错误类型:System.Exception。位置：ESFramework.Passive.ContainerStylePassiveProcesser.HandleOneMessage - MessageType:202,UserID:_0,DestUserID:10003
+
